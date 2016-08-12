@@ -1,0 +1,104 @@
+<div class="mr20 ml20" ng-controller="subcontractorsCtrl">    
+    <div class="buttonContainer fRight cWhite w-100 mt30">
+        <button class="new mt10 mb10 pl10 bGreen fRight"><span class="mr5 plus ml10 mr10 cWhite">+</span>Invite Subcontractor</button>
+        <button class="preview mt10 mb10 pl10 mr10 bDarkBlue cWhite fRight"><span class="glyphicon glyphicon-arrow-left ml10 mr10 cWhite"></span>Preview</button>
+    </div>
+
+    <div ng-show="subcontractors.length > 0">
+        <div class="scroll table table-striped table-hover table-bordered projectsTable">
+            <div class="bWhite cDarkGray w-8">Actions</div>
+            <div class="bWhite cDarkGray w-12">Name
+                <span class="glyphicon glyphicon-chevron-down ml10 mr10 mouse" ng-show="!reverseParam.name" ng-click="sortBy('name')"></span>
+                <span class="glyphicon glyphicon-chevron-up ml10 mr10 mouse" ng-show="reverseParam.name" ng-click="sortBy('name')"></span>
+            </div>
+            <div class="bWhite cDarkGray w-15">User name
+                <span class="glyphicon glyphicon-chevron-down ml10 mr10 mouse" ng-show="!reverseParam.userName" ng-click="sortBy('userName')"></span>
+                <span class="glyphicon glyphicon-chevron-up ml10 mr10 mouse" ng-show="reverseParam.userName" ng-click="sortBy('userName')"></span>
+            </div>
+            <div class="bWhite cDarkGray w-15">Company
+                <span class="glyphicon glyphicon-chevron-down ml10 mr10 mouse" ng-show="!reverseParam.company" ng-click="sortBy('company')"></span>
+                <span class="glyphicon glyphicon-chevron-up ml10 mr10 mouse" ng-show="reverseParam.company" ng-click="sortBy('company')"></span>
+            </div>
+            <div class="bWhite cDarkGray w-25">Email</div>
+            <div class="bWhite cDarkGray w-15">Phone number</div>
+            <div class="bWhite cDarkGray w-10">Tasks</div> 
+        </div>     
+
+        <div class="defactsTable">
+            <div class="cLightGray table-striped" ng-repeat="subcontractor in subcontractors">
+                <div class="w-8 tb-w center bWhite" ng-if="$even">
+                    <span class="glyphicon glyphicon-file ml10 mr10 cDarkGray mouse"></span>
+                    <span class="glyphicon glyphicon-zoom-in ml10 mr10 cDarkGray mouse"></span>
+                    <span class="glyphicon glyphicon-trash ml10 mr10 cRed mouse" ng-click="open('sm', 1, subcontractor.id)"></span>
+                </div>
+                <div class="w-8 tb-w center bVeryLightYellow" ng-if="$odd">
+                    <span class="glyphicon glyphicon-file ml10 mr10 cDarkGray mouse"></span>
+                    <span class="glyphicon glyphicon-zoom-in ml10 mr10 cDarkGray mouse"></span>
+                    <span class="glyphicon glyphicon-trash ml10 mr10 cRed mouse" ng-click="open('sm', 1, subcontractor.id)"></span>
+                </div>
+
+                <div class="w-12 tb-w bWhite" ng-if="$even">{{subcontractor.name}}</div>
+                <div class="w-12 tb-w bVeryLightYellow bCreme" ng-if="$odd" ng-class="bCreme">{{subcontractor.name}}</div>
+
+                <div class="w-15 tb-w bWhite" ng-if="$even">{{subcontractor.userName}}</div>
+                <div class="w-15 tb-w bVeryLightYellow" ng-if="$odd">{{subcontractor.userName}}</div>
+
+                <div class="w-15 tb-w bWhite" ng-if="$even">{{subcontractor.company}}</div>
+                <div class="w-15 tb-w bVeryLightYellow" ng-if="$odd">{{subcontractor.company}}</div>
+
+                <div class="w-25 tb-w bWhite" ng-if="$even">{{subcontractor.email}}</div>
+                <div class="w-25 tb-w bVeryLightYellow" ng-if="$odd">{{subcontractor.email}}</div>
+
+                <div class="w-15 tb-w bWhite" ng-if="$even"><span ng-repeat="nr in subcontractor.phoneNr">{{nr}} </span></div>
+                <div class="w-15 tb-w bVeryLightYellow" ng-if="$odd"><span ng-repeat="nr in subcontractor.phoneNr">{{nr}} </span></div>
+
+                <div class="w-10 tb-w center bWhite" ng-class="$odd ? 'bVeryLightYellow' : 'bWhite'">
+                    <button type="button" class="btn btn-primary task pointerNone bLightBlue">{{subcontractor.tasks[0]}}</button>
+                    <button type="button" class="btn btn-warning task pointerNone bOrange">{{subcontractor.tasks[1]}}</button>
+                    <button type="button" class="btn btn-info task pointerNone bPurple">{{subcontractor.tasks[2]}}</button>
+                    <button type="button" class="btn btn-success task pointerNone bGreen">{{subcontractor.tasks[3]}}</button>
+                </div>
+                <!--<div class="w-10 tb-w center bVeryLightYellow" ng-if="$odd">-->
+                    <!--<button type="button" class="btn btn-primary task pointerNone bLightBlue">{{subcontractor.tasks[0]}}</button>-->
+                    <!--<button type="button" class="btn btn-warning task pointerNone bOrange">{{subcontractor.tasks[1]}}</button>-->
+                    <!--<button type="button" class="btn btn-info task pointerNone bPurple">{{subcontractor.tasks[2]}}</button>-->
+                    <!--<button type="button" class="btn btn-success task pointerNone bGreen">{{subcontractor.tasks[3]}}</button>-->
+                <!--</div>-->
+            </div>
+        </div>
+
+        <uib-pagination class="row" ng-change="pageChanged()" force-ellipses="true" boundary-links="true" items-per-page="itemsPerPage" max-size="7" rotate="true" total-items="subcontractorsNr" ng-model="currentPage"></uib-pagination>
+        <div class="btn-group">
+            <div ng-click="pageChanged()" 
+                 class="btn btn-page" 
+                 ng-model="itemsPerPage" 
+                 uib-btn-radio="10">
+                10
+            </div>
+            <div ng-click="pageChanged()" 
+                 class="btn btn-page" 
+                 ng-model="itemsPerPage" 
+                 uib-btn-radio="20">
+                20
+            </div>
+            <div ng-click="pageChanged()" 
+                 class="btn btn-page" 
+                 ng-model="itemsPerPage" 
+                 uib-btn-radio="35">
+                35
+            </div>
+            <div ng-click="pageChanged()" 
+                 class="btn btn-page" 
+                 ng-model="itemsPerPage" 
+                 uib-btn-radio="50">
+                50
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="subcontractors.length === 0"><div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            No data on project {{currentProject.name}}!
+        </div></div>
+</div>

@@ -1,0 +1,6 @@
+<div class="breadcrumb">Home ---> {{url.split('/')[1] | capitalize}} {{url.split('/')[2]}} ---> {{bcLabel | capitalize}}</div>
+<uib-tabset class="tabsetColor" active="activeTab">
+     <uib-tab ng-repeat="tab in tabs" heading="{{tab.heading}}" ng-click="setActiveTab(tab);">
+         <div class="height100" ng-include="tab.template"></div>
+     </uib-tab>
+</uib-tabset>

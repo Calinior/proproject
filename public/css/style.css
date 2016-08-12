@@ -1,0 +1,404 @@
+/* sidebar css*/
+html, body {
+   height: 100%;
+}
+.disabled{
+    cursor: default;
+    pointer-events: none; 
+}
+.account{
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+}
+.badge{
+    background-color: #EB5154;
+    color: #FEFFFF;
+}
+.wrapper, .row {
+   height: 100%;
+   margin-left:0;
+   margin-right:0;
+}
+.nav-stacked>li+li{
+    margin: 0;
+}
+.wrapper:before, .wrapper:after,
+.column:before, .column:after {
+    content: "";
+    display: table;
+}
+.wrapper:after,
+.column:after {
+    clear: both;
+}
+.ul-create{
+    max-height: calc(100% - 272px);     
+    float: left;
+    width:180px;
+    overflow-y: hidden;
+    position: fixed;
+}
+.project-list{
+    background-color: #84878C;
+    
+}
+#sidebar .nav li li a{
+    border: none;
+    border-bottom: 1px solid #676F78;
+    border-left: 1px solid #84878C;
+}
+.create-project{
+    bottom: 0px;
+    position: fixed;
+    left: 0px;
+    padding: 10px 15px;
+    width: 180px;
+    background-color: #676F78;
+    border-left: 2px solid #676F78;
+    color: white;
+    text-decoration: none;
+}
+.create-project:hover, .create-project:active, .create-project:focus{
+    bottom: 0px;
+    position: fixed;
+    padding: 10px 15px;
+    width: 180px;
+    background-color: #222B37;
+    border-left: 2px solid #299BE4;
+}
+.create-project.active{
+    bottom: 0px;
+    position: fixed;
+    padding: 10px 15px;
+    width: 180px;
+    background-color: #222B37;
+    border-left: 2px solid #299BE4;
+}
+#sidebar {
+    background-color: #344759;
+    padding: 0;
+    float: left;
+    min-height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 99;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+#sidebar .collapse.in {
+    display: inline;
+}
+#sidebar .nav li a li{
+    border: none;
+}
+#sidebar .nav li a {
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+    border-bottom: 1px solid black;
+    border-left: 2px solid #344759;
+    cursor: pointer;
+}
+#sidebar .nav li a:hover, #sidebar .nav li a:active, #sidebar .nav li a:focus, #sidebar .nav li a.active  {
+    background-color: #222B37;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+    border-left: 2px solid #299BE4;
+}
+#sidebar.active{
+    width: 48px;
+    left:0;
+}
+#main {
+    left: 0;
+    background-color: #E9EAEE;
+    height: 100%;
+    padding: 50px 0 10px 0;
+    margin-left: 180px;
+    overflow: hidden;
+}
+/*
+ * off canvas sidebar
+ * --------------------------------------------------
+ */
+@media screen  {
+   .row-offcanvas {
+    position: relative;
+    
+  }
+  .row-offcanvas-right {
+    
+    width: calc(100% - 180px);
+  }
+  .row-offcanvas-left.active {
+    left: 48px;
+    width: calc(100% - 48px);
+  }
+  .row-offcanvas-right.active {
+    width: 100%;
+    position: relative;
+    left: -46px;
+  }
+.row-offcanvas-right.active .sidebar-offcanvas {
+    right: -48px;
+    position: absolute;
+    top: 0;
+    width: 48px;
+    
+    min-width:42px;
+  }
+  .row-offcanvas-left.active .sidebar-offcanvas {
+    left: -48px;
+    position: absolute;
+    top: 0;
+    width: 48px;
+    
+    min-width:42px;
+  }  
+}
+
+/* TOP BAR CSS*/
+.topbar{
+   height: 50px;
+   float: left;
+   padding-left: 0;
+   padding-right: 14px;
+   background-color:#FFFFFF;
+   margin-left: 180px;
+   position: fixed;
+   box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+.topbar.active{
+    width: 100%;
+    z-index: 99;
+    margin-left: 0;
+    left: 0;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+#main.active{
+    margin-left: 0;
+}
+a.nav-link.ng-binding {
+    z-index: 99;
+    background-color: #FFFFFF!important;
+    border-right: solid 1px #E2E2E2;
+    border-radius: 0;
+    margin: 0;
+    color: #B1BBC1;
+}
+a.nav-link.ng-binding.active {
+    z-index: 99;
+    background-color: #299BE4;
+    border-right: solid 1px #E2E2E2;
+    border-radius: 0;
+    margin: 0;
+    color: #B1BBC1;
+}
+li.uib-tab.nav-item.ng-scope.ng-isolate-scope.active{
+    background-color: #299BE4;
+}
+li.uib-tab.nav-item.ng-scope.ng-isolate-scope{
+    background-color: #FFFFFF;
+  
+    color: #B1BBC1;
+}
+ul.nav.nav-tabs{
+    background-color: #60686D;
+    
+}
+.topbar .nav li  {
+    cursor: pointer;
+    display: inline;
+}
+/*TODO:!!!!!!!!!PADDING!!!!!!!!!*/
+#hamburger{
+    left: -3px;
+    top: -1px;
+    padding: 11px;
+    padding-left: 13px;
+    padding-bottom: 10px;
+    padding-right: 12px;
+    background-color: #344759;
+    color: white;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+/*TODO:!!!!!!!!!MARGIN!!!!!!!!!*/
+#search{
+   width: 210px;
+   border: none;
+   margin: 0;
+   background-color:#FFFFFF;
+   padding: 14px 4px;
+   border-right: 1px solid #EAEAEA;
+   margin: 0;
+   outline: none;
+}
+.top-icon-cog{
+    color: #626A71;
+    padding: 9px 10px 9px 13px;
+    border-left: 1px solid #EAEAEA;
+    position: relative;
+    right: -16px;
+}
+.top-icon-bell{
+    color: #626A71;
+    padding: 9px 15px 9px 18px;
+    border-left: 1px solid #EAEAEA;
+    position: relative;
+    right: -15px;
+}
+#badge-cog{
+    position: relative;
+    left: -11px;
+}
+.top-icon-home{
+    color: #626A71;
+    padding: 9px 10px;
+    border-right: 1px solid #EAEAEA;
+}
+.glyphicon-search{
+    padding: 0 1px 0 10px;
+    
+}
+
+/*BreadCrumb CSS*/
+.breadcrumb {
+    margin-bottom: 0px;
+    width:100%;
+    padding: 20px;
+    background-color: #60686D;
+    border: none;
+    border-radius: 0;
+    color: white;
+}
+
+.well li a {
+    color: #FFFFFF;
+}
+ul .nav .nav-tabs{
+    background-color: #ffffff; 
+}
+#page-content-wrapper{
+    background-color: #E9EAEE;
+    width: 100%;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+}
+#page-content-wrapper .nav-link{
+    background-color: white!important;
+    color: #B1BBC1;
+    border: 0;
+    border-right: solid 1px #E2E2E2;
+}
+#page-content-wrapper li.active .nav-link {
+    background-color: #299BE4!important;
+    color: #fff;
+    border: 0;
+}
+.account-box{
+    border-bottom: 1px solid black;
+    height: 110px;
+    padding: 10px 0 10px 20px;
+}
+.account-text{
+    display: inline-block;
+    padding-left: 8px;
+    padding-top: 20px;
+}
+
+/* toggle css*/
+.onoffswitch {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    -webkit-user-select: none;
+    top: 3px;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #FFFFFF; border-radius: 50px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 9px; padding: 0; line-height: 9px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "";
+    padding-left: 10px;
+    background-color: #FFFFFF; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "";
+    padding-right: 10px;
+    background-color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block;
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    width: 18px;
+    height: 18px;   
+    margin: -3px;
+    background: #4897D1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 14px;
+    border-radius: 50px;
+    transition: all 0.3s ease-in 0s;
+}   
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+.fa-4x {
+    font-size: 4em;
+    position: relative;
+    top: -15px;
+}
+#disconnect{
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+
+/*BUTTON GROUPS PAGE*/
+.btn-group{
+    display:block;
+    margin-left: 0px;
+}
+.btn-page{
+    color:#676767;
+    background-color: white;
+    border-radius: 0;
+    border-right: 2px solid #EAEAEC;
+}
+.btn-page.active{
+    background-color: #687283;
+    color: white;
+    border-radius: 0;
+    border-right: 2px solid #EAEAEC;
+}
+.btn{
+    border: 1px solid #E9EAEE;
+}
+.alert{
+    position: absolute;
+    top: 250px;
+}

@@ -1,0 +1,68 @@
+<div ng-controller="homeCtrl">
+    <h3 class="pt20 pl15 cDarkBlue">Profile information</h3>
+    <div class="container-fluid">
+        <div class="flex">
+            <div id="profile-info" class="flex bWhite p20">
+                <div>
+                    <a class="thumbnail m0 p0">
+                        <img src={{currentUser.img}} alt="Image"> <br>
+                    </a>
+                    <button id="change" class="bBlueGray cWhite">Change</button>
+                    <button id="trash" class="pr0 pl0 bRed cWhite">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </div>
+                <div class="pl25">
+                    <div>
+                        <h4 class="cVeryDarkGray">GRUPOIMPULSA <span class="glyphicon glyphicon-pencil ml10 mr10"></span></h4>
+                    </div>
+                    <div class="flex">
+                        <div class="line pr40">
+                            <p class="mb0 cLightGray"><span class="cVeryDarkGray">Username: </span>{{currentUser.userName}}</p>
+                            <p class="mb0 cLightGray"><span class="cVeryDarkGray">Full name: </span>{{currentUser.fullName}}</p>
+                            <p class="mb0 cLightGray"><span class="cVeryDarkGray">Email: </span>{{currentUser.email}}</p>
+                            <p class="mb0 cLightGray"><span class="cVeryDarkGray">Phone: </span>{{currentUser.phone}}</p>
+                            <p class="mb0 cLightGray "><span class="cVeryDarkGray">Address: </span>{{currentUser.address}}</p>
+                        </div>
+                        <div class="pl40">
+                            <p class="mb0 cLightGray"><span class="cVeryDarkGray">Country: </span>{{currentUser.country}}</p>
+                            <p class="mb0 cLightGray"><span class="cVeryDarkGray">Zip code: </span>{{currentUser.zipCode}}</p>
+                            <p class="mb0 cLightGray"><span class="cVeryDarkGray">Industry sector: </span>{{currentUser.indSector}}</p>
+                            <p class="mb0 cLightGray"><span class="cVeryDarkGray">Registration no: </span>{{currentUser.regNo}}</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div id="account-recovery" class="m0 bWhite p20">
+                <h4>Account recovery options</h4>
+                <p class="mb0 cLightGray">If you forget your password or cannot access your account, we will use this information to help you get back in.</p>
+                <p class="mt25 mb0 cLightGray">
+                    <span class="cVeryDarkGray">
+                        Recovery email:
+                    </span>
+                    companyname@companyname.com
+                </p>
+                <p class="mb0 cLightGray"><span class="cVeryDarkGray">Recovery Phone </span>companyname@companyname.com</p>
+                <p class="mb0 cLightGray"><span class="cVeryDarkGray">Password: <a href=""><u>Change Password</u></a></span></p>
+            </div>
+        </div>
+
+        <div class="activityStreamDiv mt40 mr0 mb20 ml0">
+            <div>
+                <h4 class="cBlueGray">Activity stream</h4>
+                <div id="activityStream" class="buttonContainer">
+                    <button class="sort mt10 pl10 pr5 bDarkBlue cWhite">Name<i class="fa fa-sort ml10 mr10 iconWhite"></i></button>
+                    <button class="sort mt10  pl10 pr5 bDarkBlue cWhite">Date<i class="fa fa-sort ml10 mr10 iconWhite"></i></button>
+                    <button class="sort mt10  pl10 pr5 bDarkBlue cWhite">Project<i class="fa fa-sort ml10 mr10 iconWhite"></i></button>
+                </div>
+            </div>
+            <div class="update-task mt10 mb10 pl10 pr10 pt5 pb5 bWhite" ng-repeat="x in activityStream">
+                <div id="task-description" class="">
+                    <p class="m0 pt5 pr0 pb5 pl5 cLightGray"><span class="cVeryDarkGray">{{currentUser.userName}}</span> update a task on Project <span class="cVeryDarkGray">{{getProjectName(x.projectID)}} - {{x.taskName}}</span></p>
+                    <p class="m0 pl5 cLightGray"><i class="fa fa-calendar pr5 cBlueGray" aria-hidden="true"></i>{{x.dateAdd | date: "dd/MMMM/yyyy hh:mm"}}</p>
+                </div>
+                <button class="open-button mt10 mr10 mb10 cWhite bBlueGray">Open</button>
+            </div>
+        </div>
+    </div>
+</div>

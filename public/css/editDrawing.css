@@ -1,0 +1,30 @@
+/* edit drawing */
+.modal-md {
+    width: 450px;
+}
+
+.modal-content {
+    border-radius: 0;
+}
+
+.editDrawing .head .glyphicon {
+    float: right;
+}
+
+.editDrawing .head h4 {
+    width: 100%;
+}
+
+.editDrawing form input, .editDrawing form textarea {
+    border-radius: 0px;
+    border: none;
+}
+
+.editDrawing form label {
+    font-size: 12px;
+}
+
+.editDrawing .footer button {
+    border: none;
+    float: right;
+}

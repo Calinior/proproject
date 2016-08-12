@@ -1,0 +1,80 @@
+/* Profile information */
+#profile-info {
+    width: 60%;
+}
+
+#account-recovery {
+    width: 40%;
+}
+
+#profile-info, #account-recovery {
+    border: 5px solid #E9EAEE;
+}
+
+.flex {
+    display: flex;
+}
+
+.line {
+    border-right: 2px solid #E9EAEE;
+}
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+}
+
+/* Profile image */
+.thumbnail {
+    border: none;
+    border-radius: 0px;
+    width: 160px ;
+}
+
+/* buttons activity stream*/
+#change {
+    width: 120px;
+}
+
+#trash {
+    width: 35px;
+}
+
+#change, #trash {
+    border: none;
+    height: 25px;
+}
+
+/* Activity stream */
+#activityStream {
+    display: inline-block;
+    float: right;
+}
+
+h4 {
+    display: inline-block;
+}
+
+.activityStreamDiv {
+    display: inline-block;
+    width: 100%;
+}
+
+.update-task {
+    width: 100%;
+}
+
+#task-description {
+    display: inline-block;
+}
+
+.open-button {
+    float: right;
+    text-align: center;
+    width: 100px;
+    display: inline-block;
+    border: none;
+    height: 27px;
+}

@@ -1,0 +1,82 @@
+.headRow{
+    display:flex;
+    border-bottom: solid #ddd;
+    border-bottom-width:1px; 
+}
+.divCell{
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.divRow{
+    display:flex;
+}
+.table-bordered{
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+}
+.table-hover > .divBody > .divRow > .divCell.active:hover,
+.table-hover > .divBody > .divRow > .divCell.active:hover,
+.table-hover > .divBody > .divRow.active:hover > .divCell,
+.table-hover > .divBody > .divRow:hover > .active,
+.table-hover > .divBody > .divRow.active:hover > .headRow {
+  background-color: #e8e8e8;
+}
+.table-hover > .divBody > .divRow:hover {
+  background-color: #f5f5f5;
+}
+.table-hover > .divBody > .divRow > .divCell.success:hover,
+.table-hover > .divBody > .divRow > .headerRow.success:hover,
+.table-hover > .divBody > .divRow.success:hover > .divCell,
+.table-hover > .divBody > .divRow:hover > .success,
+.table-hover > .divBody > .divRow.success:hover > .headerRow {
+  background-color: #d0e9c6;
+}
+.table-hover > .divBody > .divRow > .divCell.info:hover,
+.table-hover > .divBody > .divRow > .headerRow.info:hover,
+.table-hover > .divBody > .divRow.info:hover > .divCell,
+.table-hover > .divBody > .divRow:hover > .info,
+.table-hover > .divBody > .divRow.info:hover > .headerRow {
+  background-color: #c4e3f3;
+}
+.table-hover > .divBody > .divRow > .divCell.warning:hover,
+.table-hover > .divBody > .divRow > .headerRow.warning:hover,
+.table-hover > .divBody > .divRow.warning:hover > .divCell,
+.table-hover > .divBody > .divRow:hover > .warning,
+.table-hover > .divBody > .divRow.warning:hover > .headerRow {
+  background-color: #faf2cc;
+}
+.table-hover > .divBody > .divRow > .divCell.danger:hover,
+.table-hover > .divBody > .divRow > .headerRow.danger:hover,
+.table-hover > .divBody > .divRow.danger:hover > .divCell,
+.table-hover > .divBody > .divRow:hover > .danger,
+.table-hover > .divBody > .divRow.danger:hover > .headerRow {
+  background-color: #ebcccc;
+}
+.table-bordered {
+  border: 1px solid #ddd;
+}
+.table-bordered > .divHead > .divRow > .headerRow,
+.table-bordered > tbody > .divRow > .headerRow,
+.table-bordered > tfoot > .divRow > .headerRow,
+.table-bordered > .divHead > .divRow > .divCell,
+.table-bordered > tbody > .divRow > .divCell,
+.table-bordered > tfoot > .divRow > .divCell {
+  border: 1px solid #ddd;
+}
+.table-bordered > .divHead > .divRow > .headerRow,
+.table-bordered > .divHead > .divRow > .divCell {
+  border-bottom-width: 1px;
+}
+  .table-bordered .headerRow,
+  .table-bordered .divCell{
+    border: 1px solid #ddd !important;
+  }
+.defactsTable{
+    height: 400px;
+}
+table.scroll {
+    width: 100%; 
+    border-spacing: 0;
+}
+table.scroll tbody,
+table.scroll thead { width: 100%!important; }

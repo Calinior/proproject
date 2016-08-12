@@ -1,0 +1,32 @@
+<div class="editDrawing">
+    <div class="head">
+        <h4 class="m0 p10 cWhite bDarkBlue">Edit drawing<span class="glyphicon glyphicon-remove cWhite mouse" ng-click="closeModal()"></span></h4>
+    </div>
+
+    <form class="pt0 pr25 pb40 pl10 bVeryLightGray" name="editDrawingForm">
+        <div class="form-group">
+            <label class="pt15 pl2" for="title">Title</label>
+            <input class="form-control" id="title" name="title" type="text" ng-model="newDrawing.name" required>
+            <p class="p10 cDarkGray" ng-show="editDrawingForm.title.$dirty && editDrawingForm.title.$invalid"> Please enter the project name! </p>
+        </div>
+
+        <div class="form-group">
+            <label class="pt15 pl2" for="title">Code</label>
+            <input class="form-control" id="code" name="code" type="text" ng-model="newDrawing.code">
+        </div>
+
+        <div class="form-group">
+            <label class="pt15 pl2" for="revisions">Revisions</label>
+            <textarea class="form-control" id="revisions" name="revisions" ng-model="newDrawing.revisions"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="pt15 pl2" for="title">Date</label>
+            <input class="form-control" id="date" name="date" type="text" ng-model='newDrawing.date'>
+        </div>
+    </form>
+
+    <div class="footer pt15 pr25 pb40 pl10">
+        <button class="pt5 pr5 pb5 pl5 cWhite bGreen" ng-disabled="editDrawingForm.title.$invalid" ng-click="editDrawing(newDrawing)">Save</button>
+    </div>
+</div>

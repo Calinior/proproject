@@ -1,0 +1,129 @@
+<div ng-controller="defectsCtrl" class="mr20 ml20">
+    <div class="buttonContainer fRight cWhite mt30 w-100">
+        <button class="preview mt10 mb10 pl10 bDarkBlue cWhite fRight"><span
+                class="glyphicon glyphicon-arrow-left cWhite ml10 mr10"></span>Preview
+        </button>
+        <button class="new mt10 mb10 pl10 bGreen fRight mr10"><span
+                class="ml10 mr10 plus cWhite">+</span>Add new defect
+        </button>
+    </div>
+
+    <div ng-show="defects.length > 0">
+        <div class="scroll table table-striped table-hover table-bordered projectsTable">      
+            <div class="bWhite cDarkGray" id="actionW">
+                Actions
+            </div>
+            <div class="bWhite cDarkGray" id="taskW">Task name
+                <span class="glyphicon glyphicon-chevron-down ml10 mr10 mouse"
+                      ng-show="!reverseParam.taskName"
+                      ng-click="sortBy('taskName')">
+
+                </span>
+                <span class="glyphicon glyphicon-chevron-up ml10 mr10 mouse" ng-show="reverseParam.taskName" ng-click="sortBy('taskName')"></span>
+            </div>
+            <div class="bWhite cDarkGray" id="priorityW">Priority
+                <span class="glyphicon glyphicon-chevron-down ml10 mr10 mouse" ng-show="!reverseParam['priority.key']" ng-click="sortBy('priority.key')"></span>
+                <span class="glyphicon glyphicon-chevron-up ml10 mr10 mouse" ng-show="reverseParam['priority.key']" ng-click="sortBy('priority.key')"></span>
+            </div>
+            <div class="bWhite cDarkGray" id="severityW">Severity
+                <span class="glyphicon glyphicon-chevron-down ml10 mr10 mouse" ng-show="!reverseParam['severity.key']" ng-click="sortBy('severity.key')"></span>
+                <span class="glyphicon glyphicon-chevron-up ml10 mr10 mouse" ng-show="reverseParam['severity.key']" ng-click="sortBy('severity.key')"></span>
+            </div>
+            <div class="bWhite cDarkGray" id="dateW">Due date
+                <span class="glyphicon glyphicon-chevron-down ml10 mr10 mouse" ng-show="!reverseParam['dueDate.key']" ng-click="sortBy('dueDate.key')"></span>
+                <span class="glyphicon glyphicon-chevron-up ml10 mr10 mouse" ng-show="reverseParam['dueDate.key']" ng-click="sortBy('dueDate.key')"></span>
+            </div>
+            <div class="bWhite cDarkGray" id="asigneeW">Assignee
+                <span class="glyphicon glyphicon-chevron-down ml10 mr10 mouse" ng-show="!reverseParam.asignee" ng-click="sortBy('asignee')"></span>
+                <span class="glyphicon glyphicon-chevron-up ml10 mr10 mouse" ng-show="reverseParam.asignee" ng-click="sortBy('asignee')"></span>
+            </div>
+            <div class="bWhite cDarkGray" id="relatedW">Related tasks</div>
+            <div class="bWhite cDarkGray" id="statusW">Status</div>       
+        </div>
+        <div class="defactsTable">
+            <div class="cLightGray table-striped" ng-repeat="defect in defects| orderBy:propertyName:reverse">
+                <div class="center tb-w" id="actionW"><span
+                        class="glyphicon glyphicon-zoom-in ml10 mr10 cDarkGray mouse" ng-click="setAddTask(true, defect)"></span></div>
+                <div class="tb-w" id="taskW">{{defect.taskName}}</div>
+                <div class="tb-w" id="priorityW">{{defect.priority.name}}</div>
+                <div class="tb-w" id="severityW">{{defect.severity.name}}</div>
+                <div class="tb-w" id="dateW">{{defect.dueDate.name}}</div>
+                <div class="tb-w" id="asigneeW">{{defect.asignee}}</div>
+                <div class="center tb-w" id="relatedW">
+                    <button type="button" class="btn btn-primary task pointerNone bLightBlue">
+                        {{defect.relatedTasks[0]}}
+                    </button>
+                    <button type="button" class="btn btn-warning task pointerNone bOrange">
+                        {{defect.relatedTasks[1]}}
+                    </button>
+                    <button type="button" class="btn btn-info task pointerNone bPurple">
+                        {{defect.relatedTasks[2]}}
+                    </button>
+                    <button type="button" class="btn btn-success task pointerNone bGreen">
+                        {{defect.relatedTasks[3]}}
+                    </button>
+                </div>
+                <div class="center tb-w" id="statusW">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle status"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                ng-if="defect.status" ng-class="statusClass(defect)">{{defect.status}}
+                        </button>
+                        <button type="button" class="btn btn-danger status default"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                ng-if="!defect.status">
+                            Select...
+                        </button>
+                        <button type="button"
+                                class="btn btn-danger dropdown-toggle statusToggle cDarkGray"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="s in status track by $index" ng-hide="s === defect.status"
+                                ng-click="changeValue(defect, s)">
+                                <a>{{s}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <uib-pagination class="" ng-change="pageChanged()" force-ellipses="true" boundary-links="true"
+                        items-per-page="itemsPerPage" max-size="7" rotate="true" total-items="defectsNr"
+                        ng-model="currentPage"></uib-pagination>
+        <div class="btn-group">
+            <div ng-click="pageChanged()"
+                 class="btn btn-page"
+                 ng-model="itemsPerPage"
+                 uib-btn-radio="10">
+                10
+            </div>
+            <div ng-click="pageChanged()"
+                 class="btn btn-page"
+                 ng-model="itemsPerPage"
+                 uib-btn-radio="20">
+                20
+            </div>
+            <div ng-click="pageChanged()"
+                 class="btn btn-page"
+                 ng-model="itemsPerPage"
+                 uib-btn-radio="35">
+                35
+            </div>
+            <div ng-click="pageChanged()"
+                 class="btn btn-page"
+                 ng-model="itemsPerPage"
+                 uib-btn-radio="50">
+                50
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="defects.length === 0"><div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            No data on project {{currentProject.name}}!
+        </div></div>
+</div>

@@ -1,0 +1,16 @@
+<h3 class="cDarkBlue pt20 pl15">Create new project</h3>
+<form class="projectForm bWhite ml15 p25" name="projectForm" novalidate>
+    <div class="form-group row ">
+        <label for="pName" class="form-control-label cDarkGray">Project name:</label>
+        <div >
+           <div class="form-label"> <input type="text" name="pName" id="pName" placeholder="Project Name" ng-model="projectName" required></div>
+            <span class="p10 cDarkGray" ng-show="projectForm.pName.$dirty && projectForm.pName.$invalid"> Please enter the project name! </span>
+        </div>
+    </div>
+
+    <div class="form-group row form-button"> 
+        <div>
+            <button class="preview mt10 mb10 pl10 cWhite bDarkBlue" ng-disabled="projectForm.pName.$invalid" ng-click="addNewProject()" value="Add new project" > Add new project </button>
+        </div>
+    </div>
+</form>

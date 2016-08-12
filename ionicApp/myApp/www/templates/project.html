@@ -1,0 +1,12 @@
+<ion-view ng-controller="projectCtrl">
+    <ion-nav-title>{{currentProject}}</ion-nav-title>
+    <ion-content> 
+        <div class="project-tab-menu dark-grey white-text">
+            <div class="inlineB w25 center pt10 active" ng-click="setActiveTab(0)">Drawings</div>
+            <div class="inlineB w25 center pt10 active" ng-click="setActiveTab(1)">Subcontractors</div>
+            <div class="inlineB w25 center pt10 active" ng-click="setActiveTab(2)">Defects</div>
+            <div class="inlineB w25 center pt10 active" ng-click="setActiveTab(3)">Punchlist</div>
+        </div>
+        <div ng-include="templates[activeTab].url"></div>
+    </ion-content>
+</ion-view>

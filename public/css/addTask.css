@@ -1,0 +1,108 @@
+/* add new task */
+.modal-lg {
+    width: 500px;
+}
+
+.addTask {
+    width: 500px;
+    position: absolute;
+    z-index: 9999;
+    right: 15px;
+}
+
+.addTask, .addTask .arrow {
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.addTask .footer {
+    padding-top: 5px;
+    height: 40px;
+}
+
+.addTask .head h4 {
+    width: 100%;
+}
+
+.addTask .arrow {
+    font-size: 20px;
+    text-align: center;
+    margin-left: -36px;
+    height: 39px;
+    width: 36px;
+    float: left;
+    border-right: 1px solid #8D8E90;
+}
+
+.addTask .right {
+    float: right;
+}
+
+/* form */
+.addTask label {
+    font-size: 12px;
+    width: 100%;
+    text-align: left;
+}
+
+.addTask input {
+    border-radius: 0px;
+    border: none;
+}
+
+.addTask .smallInput {
+    width: 80%;
+    float: left;
+}
+
+/* images */
+.addTask .location, .addTask .photos {
+    width: 100%;
+    border: 1px dashed #C6C6C6;
+    text-align: center;
+}
+
+.addTask .location {
+    height: 140px;
+}
+
+.addTask .photos {
+    height: 50px;
+}
+
+.addTask .line {
+    border-top: 2px solid #FFFFFF;
+}
+
+/* buttons */
+.addTask .afterButton {
+    width: 20%;
+    height: 34px;
+}
+
+.addTask button {
+    border-radius: 0;
+    border: none;
+}
+
+.addTask .footer button {
+    width: 100px;
+}
+
+.addTask .btn-sm {
+    font-size: 13px;
+    width: 100%;
+}
+
+.addTask .dropdown {
+    width: 20% !important;
+    display: inline-block;
+    float: left;
+}
+
+.addTask .dropdown-menu li:hover {
+    background-color: #E2E2E2;
+}
+
+.addTask .dropdown button {
+    overflow: auto;
+}

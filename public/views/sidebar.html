@@ -1,0 +1,39 @@
+<div>
+    <ul class="nav" id="menu">
+        <li class="account-box">
+            <div class="collapse in hidden-xs account">
+                <div class="fa fa-user fa-4x"></div>
+                <div class="account-text">
+                    <div><b>John Doe</b></div>
+                    <div>Site manager</div>
+                    <div>
+                        <div id="disconnect">Disconnect</div>
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked ng-click='open("sm")'>
+                            <label class="onoffswitch-label" for="myonoffswitch">
+                                <span class="onoffswitch-inner"></span>
+                                <span class="onoffswitch-switch"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li><a href="#/home"><i class="fa fa-user"></i> <span class="collapse in hidden-xs">My Account</span></a></li>
+        <li><a href="#/about"><i class="fa fa-info-circle"></i> <span class="collapse in hidden-xs">About</span></a></li>
+        <li ng-click="setScrollBar()">
+            <a data-target=".item1" data-toggle="collapse">
+                <i class="fa fa-list"></i> 
+                <span class="collapse in hidden-xs">Projects  <span class="badge">{{projNr}}</span><span class="caret"></span></span>
+            </a>          
+            <ul class="nav nav-stacked collapse left-submenu ul-create item1">
+                <li ng-repeat="prj in projects" class="project-list">
+                    <a href="#/project/{{prj.id}}/drawings">{{prj.name}}</a>
+                </li>
+            </ul>                     
+            <div class="item1 collapse" ><a href="#/createProject"><span class="create-project">+ Create new project</span></a></div>
+        </li>             
+    </ul>
+
+</div>
+<!-- /sidebar -->

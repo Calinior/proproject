@@ -1,0 +1,17 @@
+<div ng-repeat="status in punchInfo" class="shadow-bottom">
+    <div  class="row punchTemplate pt10 pr10 pb10 pl10 mt5">
+        <div>
+            <div class="punchTplContent">
+                <div class="punchImg">
+                    <img src="http://placehold.it/35x35">
+                </div>
+                <div class="ml40">
+                    <p class="valigneTop mb0"><b class="valigneTop">{{status.taskName}}</b></p>
+                    <span class="punchSpan borderRight pr5">Priority: {{status.priority.name}}</span>
+                    <span class="punchSpan">Severity:{{status.severity.name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flagFooter pt5"><p class="pb5 ml10 mb0">Flags go here</p></div>
+</div>

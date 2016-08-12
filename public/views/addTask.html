@@ -1,0 +1,149 @@
+<div class="arrow bGreen pt5"><span class="glyphicon glyphicon-arrow-right cWhite"></span></div>
+<div>
+	<div class="head">
+		<h4 class="cWhite bGreen mt0 p10 mb0">Add new task</h4>
+	</div>
+
+	<div class="pt0 pr10 pb0 pl10">
+		<form name="newTaskForm" novalidate>
+			<div class="form-group">
+				<label class="pt10 pr5 pb1 pl1 cDarkGray" for="title">Give Title</label>
+				<input class="form-control mb2" id="title" name="title" type="text"
+				       placeholder="Task name"
+				       ng-model="newTask.taskName"
+				       ng-disabled="disabled"
+				       required>
+				<p class="p10 cDarkGray"
+				   ng-show="newTaskForm.title.$dirty && newTaskForm.title.$invalid">
+					Please enter the task name!
+				</p>
+				<div class="dropdown pr1">
+					<button class="btn btn-default btn-sm dropdown-toggle pt5 pr20 pb5 pl20 cDarkGray bWhite"
+					        id="dropdownMenu1" type="button"
+					        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+					        ng-disabled="disabled">
+						{{selectedValue.priority}}
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu p0" aria-labelledby="dropdownMenu1"
+					    ng-model="newTask.priority">
+						<li ng-repeat="x in priority" ng-click="updateNewTask('priority', x)">
+							<span ng-hide="x === selectedValue.priority">{{x}}</span>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdown pr1">
+					<button class="btn btn-default btn-sm dropdown-toggle pt5 pr20 pb5 pl20 cDarkGray bWhite"
+					        id="dropdownMenu2" type="button"
+					        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+					        ng-disabled="disabled">
+						{{selectedValue.severity}}<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu p0" aria-labelledby="dropdownMenu2"
+					    ng-model="newTask.severity">
+						<li ng-repeat="x in severity" ng-click="updateNewTask('severity', x)">
+							<span ng-hide="x === selectedValue.severity">{{x}}</span>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdown pr1">
+					<button class="btn btn-default btn-sm dropdown-toggle pt5 pr20 pb5 pl20 cDarkGray bWhite"
+					        id="dropdownMenu3" type="button"
+					        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+					        ng-disabled="disabled">
+						{{selectedValue.dueDate}}<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu p0" aria-labelledby="dropdownMenu3"
+					    ng-model="newTask.dueDate">
+						<li ng-repeat="x in dueDate" ng-click="updateNewTask('dueDate', x)">
+							<span ng-hide="x === selectedValue.dueDate">{{x}}</span>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdown pr1">
+					<button class="btn btn-default btn-sm dropdown-toggle pt5 pr20 pb5 pl20 cDarkGray bWhite"
+					        id="dropdownMenu4" type="button"
+					        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+					        ng-disabled="disabled">
+						{{selectedValue.asignee}}<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu p0" aria-labelledby="dropdownMenu4"
+					    ng-model="newTask.asignee">
+						<li ng-repeat="x in assignee" ng-click="updateNewTask('asignee', x)">
+							<span ng-hide="x === selectedValue.asignee">{{x}}</span>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdown">
+					<button class="btn btn-default btn-sm dropdown-toggle pt5 pr20 pb5 pl20 cDarkGray bWhite"
+					        id="dropdownMenu5" type="button"
+					        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+					        ng-disabled="disabled">
+						{{selectedValue.status}}<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu p0" aria-labelledby="dropdownMenu5"
+					    ng-model="newTask.status">
+						<li ng-repeat="x in status" ng-click="updateNewTask('status', x)">
+							<span ng-hide="x === selectedValue.status">{{x}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="pt10 pr5 pb1 pl1 m0 cDarkGray"><span
+						class="glyphicon glyphicon-screenshot pr5"></span>Location</label><br>
+				<img class="location mt5 bWhite cLightGray" src="" alt="Upload drawing"><br>
+				<button class="right pt5 pr20 pb5 pl20 bDarkBlue cWhite" ng-disabled="disabled">
+					<span class="glyphicon glyphicon-folder-open"></span></button>
+			</div>
+
+			<div class="form-group mb0">
+				<label class="pt10 pr5 pb1 pl1 m0 cDarkGray" for="description"><span
+						class="glyphicon glyphicon-list-alt pr5"></span>Description</label><br>
+				<input class="form-control" id="description" name="description" type="text"
+				       ng-disabled="disabled">
+			</div>
+
+			<div class="form-group mb0">
+				<label class="pt10 pr5 pb1 pl1 m0 cDarkGray"><span
+						class="glyphicon glyphicon-paperclip pr5"></span>Attach photos</label><br>
+				<img class="photos mt5 bWhite cLightGray" src="" alt="">
+			</div>
+
+			<div class="form-group mb0 mt0">
+				<label class="pt10 pr5 pb1 pl1 m0 cDarkGray"><span
+						class="glyphicon glyphicon-plus-sign pr5"></span>Add related tasks</label>
+			</div>
+
+			<div class="form-group">
+				<label class="pt10 pr5 pb1 pl1 m0 cDarkGray" for="costs"><span
+						class="glyphicon glyphicon-usd pr5"></span>Estimated costs</label>
+				<input class="form-control smallInput" id="costs" name="costs" type="text"
+				       ng-disabled="disabled">
+				<button class="afterButton pt5 pr20 pb5 pl20 bDarkBlue cWhite"
+				        ng-disabled="disabled">USD
+				</button>
+			</div>
+
+			<div class="form-group line mt20">
+				<label class="pt10 pr5 pb1 pl1 m0 cDarkGray" for="comment"><span
+						class="glyphicon glyphicon-comment pr5"></span>Comment</label>
+				<input class="form-control smallInput" id="comment" name="comment" type="text"
+				       ng-disabled="disabled">
+				<button class="afterButton pt5 pr20 pb5 pl20 bDarkBlue cWhite"
+				        ng-disabled="disabled">Post
+				</button>
+			</div>
+		</form>
+	</div>
+	<div class="footer bWhite mt0 pr10">
+		<div class="right">
+			<button class="pt5 pr20 pb5 pl20 cWhite bRed" ng-click='setAddTask(false)'>Cancel
+			</button>
+			<button ng-show="showButton" class="pt5 pr20 pb5 pl20 cWhite bGreen"
+			        ng-click="addNewTask(newTask)" ng-disabled="newTaskForm.title.$invalid">Save
+			</button>
+		</div>
+	</div>
+</div>

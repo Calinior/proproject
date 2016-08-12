@@ -1,0 +1,155 @@
+/* buttons project */
+.plus {
+    font-size: 18px;
+}
+
+.delete {
+    width: 35px;
+}
+
+.generate, .new, .preview, .delete, .sort {
+    border: none;
+    height: 30px !important;
+    padding-right: 18px;
+}
+
+.generate {
+    display: inline-block;
+}
+
+.buttonContainer {
+    text-align: center;
+}
+
+/* icons project*/
+.mouse {
+    cursor: pointer;
+}
+
+.okIcon {
+    border: 1px solid #BFBFBF;
+}
+
+/* task and status */
+.btn-primary:hover, .btn-warning:hover, .btn-info:hover, .btn-success:hover {
+    background-color: #236188;
+}
+
+.task, .status, .statusToggle {
+    border-radius: 0px;
+    border: none;
+    padding: 1px 12px;
+}
+
+.pointerNone {
+    pointer-events: none;
+}
+
+.status {
+    width: 100px;
+}
+
+.statusToggle, .statusToggle:hover, .statusToggle:active {
+    background-color: #FFFFFF !important;
+    border: none;
+}
+
+.purple, .purple:hover, .purple:active {
+    background-color: #985AAF !important; 
+}
+
+.orange, .orange:hover, .orange:active {
+    background-color: #ED9B27 !important;
+}
+
+.green, .green:hover, .green:active {
+    background-color: #33BE9A !important;
+}
+
+.default, .default:hover, .default:active {
+    background-color: #299BE4 !important;
+}
+
+.dropdown-menu {
+    border-radius: 0;
+}
+
+/* table */
+.projectsTable {
+    border: none !important;
+    display: inline-block;
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+#actionW{
+    width: 5%;
+}
+#taskW{
+    width: 14%;
+}
+#priorityW{
+    width: 9%;
+}
+#severityW{
+    width:  10%;
+}
+#dateW{
+    width: 11%;
+}
+#asigneeW{
+    width: 24%;
+}
+#relatedW{
+    width: 14%;
+}
+#statusW{
+    width: 13%;
+}
+#statusW .btn-group {
+    display: inline-block;
+}
+table.scroll tbody {
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+table { table-layout: fixed; width: 100%; }
+table tr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+}
+.cLightGray .tb-w{
+    height: 38px;
+    border-bottom: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;
+    padding: 7px;
+    float: left;
+    background: #fff;
+}
+.table-striped:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.table-striped:nth-child(odd) {
+    background-color: #F8F8F8;
+}
+
+.projectsTable > div{
+    display: inline-block;
+    border-right: 1px solid #E6E6E6;
+    height: 38px;
+    padding: 9px 7px;
+    float: left;
+    background: #fff;
+}
+.table{
+    margin: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}

@@ -1,0 +1,47 @@
+/* Empty. Add your own CSS if you like */
+.title.title-left.header-item {
+    color: white;
+}
+.tabs-striped.tabs-positive .tabs{
+    background-color: #7d7f85;
+}
+.change-password{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+}
+.bottom-right{
+    position: fixed;    
+    right: 16px;
+    bottom: 26px;
+    z-index: 9;
+}
+#h150{
+    height: 150px;
+}
+.create-project{
+    top: 100px;
+    position: absolute;
+    text-align: center;
+    width: 80%;
+    margin: 0 40px;
+    padding: 20px 0;
+    font-size: 15px;
+    border-bottom: 1px solid #bbbbbb;
+
+}
+.input-project{
+    text-align: center;
+    width: 100%;
+    font-size: 20px!important;
+}
+/*tab menu*/
+.project-tab-menu{
+    display: flex;
+    height: 40px;
+}
+.active:hover{
+    background-color: #299BE4;
+    
+}

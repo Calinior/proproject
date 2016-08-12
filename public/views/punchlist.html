@@ -1,0 +1,51 @@
+<div ng-controller="punchlistCtrl" class="height100">
+    <div class="addTask bVeryLightGray" ng-if="showAddTask" ng-include="'../views/addTask.html'"></div>
+    <button class="generate mt30 mb10 ml20 pl10 bBlueGray cWhite faded" ng-disabled=true>Generate reports</button>
+    <div class="buttonContainer fRight cWhite mt30">
+        <button class="new pl10 bGreen fRight mr10" ng-click='setAddTask(true)'><span class="mr5 plus ml10 mr10 cWhite">+</span>Add new task</button>
+        <button class="sort pl10 pr5 bDarkBlue fRight mr10 faded" ng-disabled=true>Subcontractor<i class="fa fa-minus-circle ml10 mr10 cWhite"></i></button>
+        <button class="sort pl10 pr5 bDarkBlue fRight mr10 faded" ng-disabled=true>Due date<i class="fa fa-minus-circle ml10 mr10 cWhite"></i></button>
+        <button class="sort pl10 pr5 bDarkBlue fRight mr10 faded" ng-disabled=true>Severity<i class="fa fa-minus-circle ml10 mr10 cWhite"></i></button>
+        <button class="sort pl10 pr5 bDarkBlue fRight mr10 faded" ng-disabled=true>Priority<i class="fa fa-minus-circle ml10 mr10 cWhite"></i></button>
+        <button class="sort pl10 pr5 bDarkBlue fRight mr10 faded" ng-disabled=true>Name<i class="fa fa-minus-circle ml10 mr10 cWhite"></i></button>
+    </div>
+    <div ng-show="punchLists.content['Review'].length || punchLists.content['In Progress'].length || punchLists.content['Done'].length || punchLists.content['null'].length">
+        <div class="row">
+            <!-- Start of first Column -->
+            <div class="col-md-3 pr20 pl20 mt20 border-punch punchContainer">
+                <div class="punchTemplate pt10 pr10 pb10 pl10 text-center shadow-bottom" id="border-review">
+                    <p>Review</p>
+                </div>
+                <punch punch-data="punchLists.content['Review']"></punch>
+            </div>
+            <!-- Start of second Column -->
+            <div class="col-md-3 pr20 pl20 mt20  border-punch punchContainer" >
+                <div class="punchTemplate pt10 pr10 pb10 pl10 text-center shadow-bottom" id="border-done">
+                    <p>Done</p>
+                </div>
+                <punch punch-data="punchLists.content['Done']"></punch>
+            </div>
+            <!-- Start of 3rd Column -->
+            <div class="col-md-3 pr20 pl20 mt20  border-punch punchContainer ">
+                <div class="punchTemplate pt10 pr10 pb10 pl10 text-center shadow-bottom" id="border-progress">
+                    <p>In Progress</p>
+                </div>
+                <punch punch-data="punchLists.content['In Progress']"></punch>
+            </div>
+            <!-- Start of 4th Column -->
+            <div class="col-md-3 pr20 pl20 mt20  punchContainer ">
+                <div class="punchTemplate pt10 pr10 pb10 pl10 text-center shadow-bottom" id="border-unasigned">
+                    <p>Unasigned</p>
+                </div>
+                <punch punch-data="punchLists.content['null']"></punch>
+            </div>
+        </div>
+    </div>
+    <div ng-show="!punchLists.content['Review'].length && !punchLists.content['In Progress'].length && !punchLists.content['Done'].length && !punchLists.content['null'].length">
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            No data on project {{currentProject.name}}!
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<ion-view view-title="Projects">
+    <ion-content>
+        <ion-list>
+            <ion-item menu-close href="#/app/project/{{project.id}}" 
+                       ng-repeat="project in projects"
+                       ng-click="setCurrentProject(project.title)">
+                {{project.title}}
+            </ion-item>
+        </ion-list>       
+    </ion-content>
+    <a href="#/app/createProject" class="button button-fab round button-balanced round icon ion-plus dark-blue bottom-right"></a>
+</ion-view>

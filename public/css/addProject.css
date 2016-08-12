@@ -1,0 +1,30 @@
+/* create new project form */
+.projectForm {
+    width: 800px;
+}
+.projectForm div div {
+    display: inline;
+}
+.projectForm .form-label {
+    margin-left: 100px;
+    border-bottom: 1px solid #B1BBC1;
+    padding-bottom: 10px;  
+    display: inline-block;
+}
+.projectForm .form-label:hover{
+    margin-left: 100px;
+    border-bottom: 2px solid #4797D3;
+    padding-bottom: 9px;  
+}
+.projectForm .form-button {
+    margin-left: 198px;
+    padding-top: 5px;  
+}
+.projectForm #pName {
+    width: 330px;
+    border: none;
+    outline-color: white;
+}
+.projectForm .form-group {
+    margin-bottom: 0;
+}
